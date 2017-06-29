@@ -1,0 +1,111 @@
+/*project_common
+*/
+
+.p-top--note {
+    margin: 0px;
+    text-align: center;
+}
+
+.p-top--note p {
+    font-size: 1.8rem;
+    padding: 0 40px;
+}
+
+/*問い合わせボタン*/
+.p-btn-contact {
+    color: #fff;
+    border-radius: 4px;
+    display: block;
+    text-indent: -9999em;
+    transition: background 0.2s ease 0s;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+        cursor : pointer;
+}
+
+/*マウスオーバーで光る*/
+.p-btn-contact:hover{
+opacity:0.7;
+filter:alpha(opacity=70);
+-ms-filter: “alpha( opacity=70 )”;
+}
+
+.p-btn-contact--header {
+    background: #f6692a url("/wp-content/uploads/icon/icon-mail-small.png") no-repeat scroll 5px 8px;
+    height: 40px;
+    width: 170px;
+}
+.p-btn-contact--middle {
+    background: #f6692a url("/wp-content/uploads/icon/icon-mail-middle.png") no-repeat scroll 20px 20px;
+    background-size: 200px;
+    height: 80px;
+    width: 250px;
+}
+.p-note--body {
+    padding: 0 10px;
+}
+.p-note--body ul li {
+    list-style: outside circle ;
+    padding: 10px 0 10px 5px;
+    text-indent: 0rem;
+}
+.p-txt-contact--middle{
+    color: #f6692a;
+    text-align: center;
+}
+.navbar-toggle{
+    margin-top: 20px;
+}
+
+
+.p-posttitle--home{
+  font-size: 1.8rem;
+}
+
+/*
+.p-post {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+}
+*/
+
+
+.p-post {
+width:190px;
+margin:0px 5px 0px 5px;
+}
+
+.p-poststring--home {
+  //width: 75%;
+  padding-left: 10px;
+  text-align: left;;
+
+}
+.p-poststring--home a {
+    display: block;
+    height: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: #fff;/*文字色*/
+    font-size: 70%;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.weluka-sidebar h4.p-posttitle{
+  font-weight: normal;
+  font-size: 1em;
+}
+
+/* 768px以上 */
+
+@media (min-width: 768px) {
+    .p-btn-contact--middle {
+        background-size: 300px;
+        height: 120px;
+        width: 350px;
+    }
+}

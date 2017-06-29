@@ -5,19 +5,40 @@ sub-common-js.js
 
 /*load時にKICK*/
 jQuery(function () {
-
     jQuery('.animation2').css('visibility', 'hidden'); //スクロールアニメーションのパーツを非表示
     CommonSubObj = new CommonSubJs();
     CommonSubObj.PageTop();
-
+    /* Welukaビルダーでこけるので、コメントアウト
+    CommonSubObj.snsImageFIx();
+    */
     /*
     var spMode = true;
     spMode = subJsObj.getBlnSp();
   */
-
     //レスポンシブにてイメージマップのリンクずれを自動修正する
     jQuery('img[usemap]').rwdImageMaps();
-
+    
+  
+  jQuery(window).scroll(function() {
+        /*scrollするとヘッダ透過*/
+    if (jQuery(this).scrollTop() > 0) {
+      jQuery('header').css('opacity', 0.8);
+    } else {
+      jQuery('header').css('opacity', 1);
+    }
+      /*scrollするとlc-main へ scrollin を追加(ふわっと表示用)*/
+      jQuery('.lr-main').each(function(){
+            var elemPos = jQuery(this).offset().top;
+            var scroll = jQuery(window).scrollTop();
+            var windowHeight = jQuery(window).height();
+            if (scroll > elemPos - windowHeight + 200){
+                jQuery(this).addClass('scrollin');
+            }
+        });
+      
+  });
+    
+    
 });
 /*end.load時にkick*/
 
@@ -73,7 +94,7 @@ var CommonSubJs = function () {
         <p id="pageTop"><a href="#"><i class="fa fa-chevron-up"></i></a></p> 
         */
         this.PageTop = function () {
-                var topBtn = jQuery('#pageTop');
+                var topBtn = jQuery('js-fixlink--top');
                 topBtn.hide();
                 //◇ボタンの表示設定
                 jQuery(window).scroll(function () {
@@ -84,7 +105,6 @@ var CommonSubJs = function () {
                         //---- 画面が特定の範囲内にスクロールするとボタン表示
                         topBtn.fadeIn();
                     } else {
-
                         //---- ボタン非表示
                         topBtn.fadeOut();
                     }
@@ -99,6 +119,28 @@ var CommonSubJs = function () {
             }
             //end. ■page topボタン
 
+              /*SNSの画像のホストネーム付与*/
+             this.snsImageFIx = function () {       
+                var protocol = window.location.protocol;
+                var hostname = window.location.hostname;
+                var sitetop = protocol +"//"+ hostname;
+                /*FB*/
+                var content = jQuery("meta[property='og:image']").attr('content');
+                if(content.indexOf(sitetop) == -1 && content.indexOf('/wp-content') != -1){
+                content = content.replace('/wp-content', sitetop+'/wp-content');
+                jQuery("meta[property='og:image']").attr('content',content);
+                }
+                /*Twitter*/
+                var content = jQuery("meta[name='twitter:image']").attr('content');
+                if(content.indexOf(sitetop) == -1 && content.indexOf('/wp-content') != -1){
+                content = content.replace('/wp-content', sitetop+'/wp-content');
+                jQuery("meta[name='twitter:image']").attr('content',content);
+                }
+             }
+                /*END SNSの画像のホストネーム付与*/   
+        
+        
+        
         /*sp判定(768をブレイクポイント)*/
         this.getBlnSp = function () {
                 var $win = jQuery(window);
