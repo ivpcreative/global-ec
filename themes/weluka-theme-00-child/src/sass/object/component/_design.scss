@@ -33,112 +33,138 @@
 
 /*タイトル*/
 .c-ttl {
-    display: block;
+font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+font-size: 3.4rem;
+font-weight: 700;
+text-align:center;
+margin-left: auto;
+margin-right: auto;
+}
+
+/*短い下線*/
+.c-ttl--strong , .c-ttl--lineup{
+ content: "";
+ position: relative;
+ display: inline-block;
+// padding-bottom: 30px;
+ }
+
+.c-ttl--strong::before,.c-ttl--lineup::before {
+ content: "";
+ position: absolute;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ border-bottom: 3px solid #f78154;
+ width : 40% ;
+ width : -webkit-calc(100% - 550px) ;
+ width : calc(100% - 550px) ;
+ margin: 0 auto;
+ }
+
+
+ .c-raytxt--strong{
+   position: absolute;
+ //  background-color: #3bada8;
+ bottom: 20px;
+ left: 0px;
+ width:100%;
+ }
+ .c-raytxt--strong p{
+ line-height: 5px;
+ }
+
+ .c-box3--lineup{
+   color: #fff;
+   text-align: center;
+   margin:0 30px;
+   background-color: $main-color;
+   border-radius:10px;
+   padding: 15px 10px;
+   line-height: 1.0;
+   p{
+     line-height: 1.0;
+   }
+ }
+
+
+
+ .c-name {
+   border-bottom: 1px solid #656566;
+   margin:30px 0 20px 0;
+      h2{
+      font-family:Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+      font-size: 3.0rem;
+      margin: 5px;
+        }
+      h2:before{
+        margin:0 5px 0 0;
+        content:" ";
+        display:inline-block;
+        content: url("/global-ec/wp-content/uploads/ico/ico-box.png");
+        background-size:contain;
+        vertical-align:middle;
+      }
+}
+.c-voice{
+  p{
+  font-size:4.8rem;
+  font-weight: 700;
+  line-height: 1.0;
+  }
+}
+.c-ask{
+  p{
+    font-size: 2.4rem;
+    margin: 0px;
+  }
+    background-color: #fff;
+    border :3px solid $main-color;
+    width:80%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.c-ttl--right {
-    padding: 20px 10px 10px 10px;
+
+.lc-buy .weluka-img{
+  height: 550px;
+  padding: 20px;
+  margin: 0px;
+    background-color: $buy-bg;
 }
 
-.c-ttl--left {
-    padding: 20px 10px 10px 10px;
+.c-detail{
+  height: 300px;
+  background-color: #fff;
+  padding: 20px;
+  margin: 0px;
+  font-size: 1.6rem;
+  h3{
+    font-size:2.0rem;
+  }
 }
 
-.c-body {
-    padding: 2rem;
+.lc-detail .weluka-img{
+    height: 250px;
+  margin: 0px;
+  padding: 10px;
+  background-color: #fff;
+
 }
 
-.c-body p{
-    line-height: 2.0;
+.c-note{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
-
-.c-body--center {
-    /*
-    padding:10px 120px 10px 120px;
-    */
-    width: 600px;
+.c-note li {
+    counter-increment: number;
+    list-style: outside none none;
+    padding: 10px 0 10px 20px;
+    text-indent: -3rem;
 }
 
-
-.c-body--pt01 {
-    background: URL('/wp-content/uploads/img/sp-img-wp-circle.png') no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
-.c-body--pt06 {
-    text-align: center;
-}
-
-.c-ttl {
-    width: 100%
-}
-
-.c-img--pt05 {
-    padding: 0 10px;
-}
-
-/* SearchWindow */
-.search-submit {
-    -moz-user-select: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.35;
-    margin-bottom: 0;
-    padding: 6px 12px;
-    text-align: center;
-    touch-action: manipulation;
-    vertical-align: middle;
-}
-
-.search-submit:hover,
-.search-submit:active {
-    color: #fff;
-    background-color: #303030;
-    border-color: #3c3c3c;
-}
-
-
-/*横スクロールリスト*/
-.c-scrolllist--blog{
-    height: 190px;/*メニューの縦幅*/
-    background-color: #444;/*メニューの背景色*/
-}
-.c-scrolllist .c-scrolllist-inner {
-    list-style-type: none;
-    width: 1000px;/*メニューの横幅*/
-    height: 100%;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
-}
-.c-scrolllist li {
-    float: left;
-    height: 100%;
-    list-style: none;
-}
-
-.c-scrolllist a:hover {
-    background-color: #555;/*マウスホバー時の背景色*/
-}
-@media screen and (max-width: 1000px) {/*メニューの横幅*/
-    .c-scrolllist {
-        overflow-x: scroll;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-    }
-    .c-scrolllist .c-scrolllist-inner {
-        margin: 0;
-    }
-}
-/* end 横スクロールリスト*/
 
 /* 768px以上 */
 @media (min-width: 768px) {

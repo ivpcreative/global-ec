@@ -22,8 +22,15 @@
     text-align:right;
 }
 
-/*Yellow ハイライト*/
+/*Y強調*/
 .u-bg-highlight{
     background-color: #fce519;
 		font-weight: bold;
+}
+
+.u-strong-impact{
+color: #f78154;
+}
+.u-strong-impact--large{
+    font-size: 150%;
 }

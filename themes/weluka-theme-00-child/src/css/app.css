@@ -10,13 +10,21 @@
 
 /* fundation_base
 */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Noto Sans CJK JP"), url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.otf) format("opentype"); }
+
 /*デフォルト設定変更*/
 html {
   font-size: 62.5%;
   /*スマホの倍率、PCはメディアクエリに記載*/ }
 
 body {
-  font-family: Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+  font-family: "Noto Sans", "Noto Sans CJK JP",Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+  -webkit-font-feature-settings: 'palt' 1;
+  font-feature-settings: 'palt' 1;
   color: #4c4c4c;
   background-color: #fff;
   font-size: 1.6rem;
@@ -165,64 +173,47 @@ welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr-
 Layout＿main
 welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr- 、とします。
 */
-@media (max-width: 991px) {
-  /*
-    #main > .weluka-container-fluid,
-    #main > .weluka-container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .topnav-clm {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    */ }
-
 /*
 Section
 */
-.lr-main,
-.ls-note,
-.lc-sub {
-  padding: 0 1rem; }
-
-.lr-main {
-  margin-bottom: 3rem; }
-
-.ls-top {
-  padding: 0.5rem 0rem; }
-
-.ls-contact {
-  padding: 1rem; }
-
-/*Row*/
-.lr-main--bg02 {
-  background-color: #39ACCD; }
-
-.lr-main--bg03 {
-  background-color: #39ACCD; }
-
-.lr-sub--bg04 {
-  margin-bottom: 10px;
-  background: #ffd063; }
-
-.lr-apply {
-  margin-bottom: 30px; }
-
-.ls-bloglist--home {
-  margin: 0px;
+.ls-ec--top, .ls-ec--strong {
+  background-color: #edf0f2;
   padding: 0px; }
 
-/*single*/
-.single-post .weluka-row {
-  padding-left: 10px;
-  padding-right: 10px; }
+/*
+row
+*/
+.lr-box--strong {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  text-align: center; }
+
+.ls-ec--trial {
+  background-color: #edf0f2; }
+
+.lr-box {
+  text-align: center; }
 
 /*
-colmun
+column
 */
-.lc-main--txt02 {
-  color: #fff; }
+.lc-box--strong {
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative; }
+
+.lc-ttl {
+  text-align: center; }
+
+.lc-box3--lineup {
+  position: relative; }
+
+.lc-buy, .lc-detail {
+  padding: 20px; }
 
 /* 768px以上(スマホ以外表示)*/
 @media (min-width: 768px) {
@@ -359,6 +350,56 @@ welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr-
   background: #de4d3e none repeat scroll 0 0; }
 
 /* end.share button */
+/* end:問い合わせボタン*/
+.c-btn--contact {
+  text-align: center;
+  padding: 20px; }
+
+.c-btnlink {
+  display: inline-block;
+  width: 490px;
+  height: 90px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 54px;
+  outline: none;
+  box-shadow: 2px 2px 2px #555; }
+
+.c-btnlink::before,
+.c-btnlink::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: ''; }
+
+.c-btnlink,
+.c-btnlink::before,
+.c-btnlink::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s; }
+
+.c-btnlink {
+  background-color: #72b9cc;
+  color: #fff; }
+
+.c-btnlink:hover {
+  background-color: #59b1eb; }
+
+.c-btnlink p {
+  line-height: 1.0; }
+
+p.c-contact-name {
+  padding: 20px 0 5px 0;
+  margin: 0px;
+  font-size: 1.4rem; }
+
+p.c-contact-ttl {
+  font-size: 2.8rem; }
+
+/* end:問い合わせボタン*/
 /* 768px以上 */
 @media (min-width: 768px) {
   .c-fixlink--tw {
@@ -453,99 +494,113 @@ form.wpcf7-form p {
 
 /*タイトル*/
 .c-ttl {
-  display: block;
+  font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+  font-size: 3.4rem;
+  font-weight: 700;
+  text-align: center;
   margin-left: auto;
   margin-right: auto; }
 
-.c-ttl--right {
-  padding: 20px 10px 10px 10px; }
+/*短い下線*/
+.c-ttl--strong, .c-ttl--lineup {
+  content: "";
+  position: relative;
+  display: inline-block; }
 
-.c-ttl--left {
-  padding: 20px 10px 10px 10px; }
+.c-ttl--strong::before, .c-ttl--lineup::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 3px solid #f78154;
+  width: 40%;
+  width: -webkit-calc(100% - 550px);
+  width: calc(100% - 550px);
+  margin: 0 auto; }
 
-.c-body {
-  padding: 2rem; }
-
-.c-body p {
-  line-height: 2.0; }
-
-.c-body--center {
-  /*
-    padding:10px 120px 10px 120px;
-    */
-  width: 600px; }
-
-.c-body--pt01 {
-  background: URL("/wp-content/uploads/img/sp-img-wp-circle.png") no-repeat;
-  background-size: contain;
-  background-position: center; }
-
-.c-body--pt06 {
-  text-align: center; }
-
-.c-ttl {
+.c-raytxt--strong {
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
   width: 100%; }
 
-.c-img--pt05 {
-  padding: 0 10px; }
+.c-raytxt--strong p {
+  line-height: 5px; }
 
-/* SearchWindow */
-.search-submit {
-  -moz-user-select: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.35;
-  margin-bottom: 0;
-  padding: 6px 12px;
-  text-align: center;
-  touch-action: manipulation;
-  vertical-align: middle; }
-
-.search-submit:hover,
-.search-submit:active {
+.c-box3--lineup {
   color: #fff;
-  background-color: #303030;
-  border-color: #3c3c3c; }
+  text-align: center;
+  margin: 0 30px;
+  background-color: #3b7aad;
+  border-radius: 10px;
+  padding: 15px 10px;
+  line-height: 1.0; }
+  .c-box3--lineup p {
+    line-height: 1.0; }
 
-/*横スクロールリスト*/
-.c-scrolllist--blog {
-  height: 190px;
-  /*メニューの縦幅*/
-  background-color: #444;
-  /*メニューの背景色*/ }
+.c-name {
+  border-bottom: 1px solid #656566;
+  margin: 30px 0 20px 0; }
+  .c-name h2 {
+    font-family: Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 3.0rem;
+    margin: 5px; }
+  .c-name h2:before {
+    margin: 0 5px 0 0;
+    content: " ";
+    display: inline-block;
+    content: url("/global-ec/wp-content/uploads/ico/ico-box.png");
+    background-size: contain;
+    vertical-align: middle; }
 
-.c-scrolllist .c-scrolllist-inner {
-  list-style-type: none;
-  width: 1000px;
-  /*メニューの横幅*/
-  height: 100%;
-  margin: 0 auto;
-  padding: 0;
-  text-align: center; }
+.c-voice p {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1.0; }
 
-.c-scrolllist li {
-  float: left;
-  height: 100%;
-  list-style: none; }
+.c-ask {
+  background-color: #fff;
+  border: 3px solid #3b7aad;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto; }
+  .c-ask p {
+    font-size: 2.4rem;
+    margin: 0px; }
 
-.c-scrolllist a:hover {
-  background-color: #555;
-  /*マウスホバー時の背景色*/ }
+.lc-buy .weluka-img {
+  height: 550px;
+  padding: 20px;
+  margin: 0px;
+  background-color: #72b9cc; }
 
-@media screen and (max-width: 1000px) {
-  /*メニューの横幅*/
-  .c-scrolllist {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch; }
-  .c-scrolllist .c-scrolllist-inner {
-    margin: 0; } }
+.c-detail {
+  height: 300px;
+  background-color: #fff;
+  padding: 20px;
+  margin: 0px;
+  font-size: 1.6rem; }
+  .c-detail h3 {
+    font-size: 2.0rem; }
 
-/* end 横スクロールリスト*/
+.lc-detail .weluka-img {
+  height: 250px;
+  margin: 0px;
+  padding: 10px;
+  background-color: #fff; }
+
+.c-note {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%; }
+
+.c-note li {
+  counter-increment: number;
+  list-style: outside none none;
+  padding: 10px 0 10px 20px;
+  text-indent: -3rem; }
+
 /* 768px以上 */
 @media (min-width: 768px) {
   .c-ttl {
@@ -553,6 +608,46 @@ form.wpcf7-form p {
   .navbar-brand {
     display: none; } }
 
+/*Component_button
+※通常、接頭語にc- が必要だが、ここでは、前CSS構造の sub-common.css の内容を引き継ぐ。
+*/
+.c-arrow--lineup {
+  text-align: center; }
+
+/*丸で囲んだ矢印*/
+.c-arrow_inner--lineup {
+  font-size: 30px;
+  /*矢印の大きさ*/
+  bottom: -23px;
+  left: 43%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 50%;
+  /* 50%でもOK */
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border-color: #3b7aad;
+  background-color: #fff;
+  /* 円の色 */
+  padding: 11px 0 0 0px;
+  box-shadow: 0 0 0 3px #3b7aad;
+  /*外周の色*/ }
+
+.c-arrow_inner::before {
+  color: #3b7aad; }
+
+.c-sankaku {
+  border-style: solid;
+  border-width: 30px 70px 0 70px;
+  border-color: #3b7aad transparent transparent transparent;
+  width: 0;
+  height: 0;
+  /*以下、真ん中そろえ*/
+  margin-left: auto;
+  margin-right: auto; }
+
+/* 768px以上 */
 /*project_common
 */
 .p-top--note {
@@ -685,9 +780,15 @@ form.wpcf7-form p {
 .text-right {
   text-align: right; }
 
-/*Yellow ハイライト*/
+/*Y強調*/
 .u-bg-highlight {
   background-color: #fce519;
   font-weight: bold; }
+
+.u-strong-impact {
+  color: #f78154; }
+
+.u-strong-impact--large {
+  font-size: 150%; }
 
 /* EoF */

@@ -102,10 +102,60 @@
 
 /* end.share button */
 
+/* end:問い合わせボタン*/
+.c-btn--contact{
+text-align: center;
+padding: 20px;
+}
+.c-btnlink {
+	display: inline-block;
+	width: 490px;
+	height: 90px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 54px;
+	outline: none;
+box-shadow:2px 2px 2px #555;
+}
+.c-btnlink::before,
+.c-btnlink::after {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	content: '';
+}
+.c-btnlink,
+.c-btnlink::before,
+.c-btnlink::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
 
+.c-btnlink {
+	background-color: $buy-bg;
+	color: #fff;
+}
+.c-btnlink:hover {
+	background-color: #59b1eb;
+}
 
+.c-btnlink p{
 
+  line-height: 1.0;
+}
+p.c-contact-name {
+  padding:20px 0 5px 0;
+  margin: 0px;
+  font-size: 1.4rem;
+}
+p.c-contact-ttl{
+  font-size: 2.8rem;
+}
 
+/* end:問い合わせボタン*/
 
 /* 768px以上 */
 @media (min-width: 768px) {
