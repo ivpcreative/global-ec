@@ -9,43 +9,40 @@ Section
 */
 
 .ls-ec--top,.ls-ec--strong{
-  background-color: #edf0f2;
+  background-color: $glay-bg;
   padding: 0px;
+}
+.ls-ec--trial,.ls-ec--original{
+  background-color:$glay-bg;
 }
 
 /*
 row
 */
-.lr-box--strong{
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: stretch;
-  align-items: stretch;
-  //border: 1px solid #aaa;
-  text-align: center;
-  //height: 150px;
-  //padding: 40px;
-
-}
-
-.ls-ec--trial{
-  background-color:$glay-bg;
-}
-
 .lr-box{
+  padding:0 0 50px 0;
 text-align: center;
 }
 
 /*
 column
 */
-
 .lc-box--strong{
+  background-color: $white-bg;
   padding-left: 5px;
   padding-right: 5px;
-  position: relative; //テキストを上に載せるため
+  margin: 3px 5px 10px 5px;
+  //position: relative; //テキストを上に載せるため
+}
+
+
+.lc-box--strong .weluka-img{
+  height: 130px;
+  margin: 0px;
+}
+
+.lc-box--strong-03 .c-box--strong{
+  margin-top:10px;
 }
 
 .lc-ttl{
@@ -63,10 +60,40 @@ column
   padding: 20px;
 }
 
+.lc-buy .weluka-img{
+  height: 550px;
+  padding: 20px;
+  margin: 0px;
+    background-color: $buy-bg;
+}
+
+.lc-detail .weluka-img{
+    height: 250px;
+  margin: 0px;
+  padding: 10px;
+}
+
+.lc-detail--trial .weluka-img,.lc-detail--original .weluka-img{
+  background-color: $white-bg;
+}
+
+
+.lc-detail--package .weluka-img{
+  background-color: $glay-bg;
+}
 
 /* 768px以上(スマホ以外表示)*/
 
 @media (min-width: 768px) {
+  .lr-box--strong{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    text-align: center;
+  }
     #main-content {
         padding: 0.5rem 0rem;
     }

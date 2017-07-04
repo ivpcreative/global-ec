@@ -3,7 +3,10 @@
 
 $main-color:#3b7aad;
 $glay-bg:#edf0f2;
+$white-bg:#fff;
 $buy-bg:#72b9cc;
+$btn-color:#72b9cc;
+$re-hirakaku:"Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;";
 
 @font-face {
    font-family: 'Noto Sans JP';
@@ -17,7 +20,6 @@ src: local("Noto Sans CJK JP"),
 
 
 /*デフォルト設定変更*/
-
 html {
     font-size: 62.5%; /*スマホの倍率、PCはメディアクエリに記載*/
 }
@@ -26,7 +28,7 @@ body {
     font-family: "Noto Sans", "Noto Sans CJK JP",Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;
     -webkit-font-feature-settings: 'palt' 1; // for Android 4.4
     font-feature-settings: 'palt' 1;
-    color: #4c4c4c;
+    color: #000000;
     background-color: #fff;
     font-size: 1.6rem; /*スマホ用 PCはメディアクエリに記載*/
 }
@@ -52,6 +54,13 @@ h6 {
     -webkit-margin-end: 0;
 }
 
+/*アンカーの位置をずらす*/
+a.anchor{
+padding-top:100px;
+margin-top:-100px
+}
+
+/*記事*/
 .single-post h1{
     font-size: 2.125em;
     line-height: 1.5;

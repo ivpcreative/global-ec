@@ -25,7 +25,7 @@ body {
   font-family: "Noto Sans", "Noto Sans CJK JP",Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;
   -webkit-font-feature-settings: 'palt' 1;
   font-feature-settings: 'palt' 1;
-  color: #4c4c4c;
+  color: #000000;
   background-color: #fff;
   font-size: 1.6rem;
   /*スマホ用 PCはメディアクエリに記載*/ }
@@ -50,6 +50,12 @@ h6 {
   -webkit-margin-start: 0;
   -webkit-margin-end: 0; }
 
+/*アンカーの位置をずらす*/
+a.anchor {
+  padding-top: 100px;
+  margin-top: -100px; }
+
+/*記事*/
 .single-post h1 {
   font-size: 2.125em;
   line-height: 1.5;
@@ -138,6 +144,24 @@ a:hover {
 Layout_footer
 welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr- 、とします。
 */
+.ls-ec--footer {
+  font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ","Meiryo",sans-serif;
+  font-size: 1.4rem; }
+
+.lr-ec-copylight {
+  font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ","Meiryo",sans-serif;
+  color: #fff;
+  font-size: 1.0rem;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #777777; }
+
+.lc-info-footer {
+  text-align: center; }
+
+/* 768px以上 */
+/* 992px以上 */
+/* 1200x以上 */
 /*
 Layout_header
 welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr- 、とします。
@@ -145,6 +169,12 @@ welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr-
 /*ヘッダスクロール時*/
 .headroom--not-top .lc-header--logo {
   display: none; }
+
+.lc-nav--header {
+  margin-top: 20px; }
+
+.lc-btn--header {
+  margin-top: 10px; }
 
 /* 768px以上(スマホ以外表示)*/
 @media (min-width: 768px) {
@@ -180,31 +210,31 @@ Section
   background-color: #edf0f2;
   padding: 0px; }
 
+.ls-ec--trial, .ls-ec--original {
+  background-color: #edf0f2; }
+
 /*
 row
 */
-.lr-box--strong {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: stretch;
-  align-items: stretch;
-  text-align: center; }
-
-.ls-ec--trial {
-  background-color: #edf0f2; }
-
 .lr-box {
+  padding: 0 0 50px 0;
   text-align: center; }
 
 /*
 column
 */
 .lc-box--strong {
+  background-color: #fff;
   padding-left: 5px;
   padding-right: 5px;
-  position: relative; }
+  margin: 3px 5px 10px 5px; }
+
+.lc-box--strong .weluka-img {
+  height: 130px;
+  margin: 0px; }
+
+.lc-box--strong-03 .c-box--strong {
+  margin-top: 10px; }
 
 .lc-ttl {
   text-align: center; }
@@ -215,8 +245,33 @@ column
 .lc-buy, .lc-detail {
   padding: 20px; }
 
+.lc-buy .weluka-img {
+  height: 550px;
+  padding: 20px;
+  margin: 0px;
+  background-color: #72b9cc; }
+
+.lc-detail .weluka-img {
+  height: 250px;
+  margin: 0px;
+  padding: 10px; }
+
+.lc-detail--trial .weluka-img, .lc-detail--original .weluka-img {
+  background-color: #fff; }
+
+.lc-detail--package .weluka-img {
+  background-color: #edf0f2; }
+
 /* 768px以上(スマホ以外表示)*/
 @media (min-width: 768px) {
+  .lr-box--strong {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    text-align: center; }
   #main-content {
     padding: 0.5rem 0rem; }
   #weluka-main-header {
@@ -350,46 +405,54 @@ welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr-
   background: #de4d3e none repeat scroll 0 0; }
 
 /* end.share button */
-/* end:問い合わせボタン*/
+/* 問い合わせボタン*/
 .c-btn--contact {
   text-align: center;
   padding: 20px; }
 
 .c-btnlink {
+  color: #fff;
   display: inline-block;
-  width: 490px;
-  height: 90px;
   text-align: center;
   text-decoration: none;
-  line-height: 54px;
   outline: none;
   box-shadow: 2px 2px 2px #555; }
+  .c-btnlink p {
+    line-height: 1.0; }
+  .c-btnlink::before, .c-btnlink::after {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    content: '';
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
 
-.c-btnlink::before,
-.c-btnlink::after {
-  position: absolute;
-  z-index: -1;
-  display: block;
-  content: ''; }
-
-.c-btnlink,
-.c-btnlink::before,
-.c-btnlink::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all .3s;
-  transition: all .3s; }
-
-.c-btnlink {
+.c-btnlink--header {
   background-color: #72b9cc;
-  color: #fff; }
+  border-radius: 10px;
+  padding: 10px 30px; }
+  .c-btnlink--header:hover {
+    background-color: #59b1eb;
+    color: #ff0; }
 
-.c-btnlink:hover {
-  background-color: #59b1eb; }
+.c-btnlink--contact {
+  background-color: #72b9cc;
+  width: 490px;
+  height: 90px;
+  line-height: 54px; }
+  .c-btnlink--contact:hover {
+    background-color: #59b1eb;
+    color: #ff0; }
 
-.c-btnlink p {
-  line-height: 1.0; }
+.c-btnlink--inquiry {
+  background-color: #fda722;
+  padding: 10px 80px; }
+  .c-btnlink--inquiry:hover {
+    background-color: #fdc522;
+    color: #ff0; }
 
 p.c-contact-name {
   padding: 20px 0 5px 0;
@@ -520,13 +583,23 @@ form.wpcf7-form p {
   margin: 0 auto; }
 
 .c-raytxt--strong {
-  position: absolute;
-  bottom: 20px;
-  left: 0px;
-  width: 100%; }
+  /* position: absolute;*/
+  background-color: #3bada8;
+  margin: 0 0 5px 0;
+  padding-top: 20px;
+  width: 100%;
+  color: #ffff00;
+  height: 60px; }
+  .c-raytxt--strong p {
+    font-size: 1.8rem;
+    line-height: 1.5rem; }
 
-.c-raytxt--strong p {
-  line-height: 5px; }
+.c-raytxt--strong-04, .c-raytxt--strong-05 {
+  padding-top: 10px;
+  font-size: 1.6rem; }
+
+.c-box3 {
+  text-align: center; }
 
 .c-box3--lineup {
   color: #fff;
@@ -537,15 +610,32 @@ form.wpcf7-form p {
   padding: 15px 10px;
   line-height: 1.0; }
   .c-box3--lineup p {
+    font-size: 2.8rem;
     line-height: 1.0; }
+
+.c-box3--inquiry {
+  margin: 0 30px;
+  border: 4px solid #1c829b;
+  padding: 15px 10px; }
+  .c-box3--inquiry p {
+    font-family: "Meiryo, " メイリオ ",Hiragino Sans, " ヒラギノ角ゴシック ", Hiragino Kaku Gothic ProN, " ヒラギノ角ゴ ProN W3 ", Roboto, " Droid Sans ", YuGothic, " 游ゴシック ", Verdana, " ＭＳ Ｐゴシック ", sans-serif;";
+    font-size: 1.6rem;
+    line-height: 1.0; }
+
+.c-border {
+  background-color: #e7ebeb;
+  height: 6px;
+  margin: 1.9285em auto 1.6428em;
+  width: 24%; }
 
 .c-name {
   border-bottom: 1px solid #656566;
   margin: 30px 0 20px 0; }
   .c-name h2 {
-    font-family: Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+    font-family: "Meiryo, " メイリオ ",Hiragino Sans, " ヒラギノ角ゴシック ", Hiragino Kaku Gothic ProN, " ヒラギノ角ゴ ProN W3 ", Roboto, " Droid Sans ", YuGothic, " 游ゴシック ", Verdana, " ＭＳ Ｐゴシック ", sans-serif;";
     font-size: 3.0rem;
-    margin: 5px; }
+    margin: 5px;
+    font-weight: 700; }
   .c-name h2:before {
     margin: 0 5px 0 0;
     content: " ";
@@ -569,44 +659,53 @@ form.wpcf7-form p {
     font-size: 2.4rem;
     margin: 0px; }
 
-.lc-buy .weluka-img {
-  height: 550px;
-  padding: 20px;
-  margin: 0px;
-  background-color: #72b9cc; }
-
 .c-detail {
+  text-align: center;
   height: 300px;
-  background-color: #fff;
   padding: 20px;
   margin: 0px;
   font-size: 1.6rem; }
   .c-detail h3 {
     font-size: 2.0rem; }
 
-.lc-detail .weluka-img {
-  height: 250px;
-  margin: 0px;
-  padding: 10px;
+.c-detail--trial, .c-detail--original {
   background-color: #fff; }
+
+.c-detail--package, .c-detail_img-package {
+  background-color: #edf0f2; }
 
 .c-note {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   width: 80%; }
 
 .c-note li {
   counter-increment: number;
   list-style: outside none none;
-  padding: 10px 0 10px 20px;
-  text-indent: -3rem; }
+  padding: 10px 0 10px 30px;
+  text-indent: -2rem; }
 
 /* 768px以上 */
 @media (min-width: 768px) {
   .c-ttl {
     width: 70%; }
   .navbar-brand {
-    display: none; } }
+    display: none; }
+  .c-raytxt--strong p {
+    font-size: 1.4rem; } }
+
+/* 992px以上 */
+@media (min-width: 992px) {
+  .c-detail {
+    text-align: left; }
+  .c-raytxt--strong p {
+    font-size: 1.6rem; } }
+
+/* 1200x以上 */
+@media (min-width: 1200px) {
+  .c-raytxt--strong p {
+    font-size: 2.0rem; } }
 
 /*Component_button
 ※通常、接頭語にc- が必要だが、ここでは、前CSS構造の sub-common.css の内容を引き継ぐ。
@@ -648,6 +747,49 @@ form.wpcf7-form p {
   margin-right: auto; }
 
 /* 768px以上 */
+/*Component_button
+※通常、接頭語にc- が必要だが、ここでは、前CSS構造の sub-common.css の内容を引き継ぐ。
+*/
+.c-info .hours, .c-info .tel01 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3571rem; }
+
+.c-info .hours {
+  padding-left: 1.3571rem; }
+
+.c-info .tel01 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem; }
+  .c-info .tel01 p {
+    margin-bottom: 0rem;
+    display: inline-block;
+    vertical-align: middle; }
+  .c-info .tel01 span {
+    font-size: 1.7rem;
+    padding-left: 1.3rem; }
+
+.c-info .tel02 {
+  font-size: 12px;
+  line-height: 1.5; }
+  .c-info .tel02 p {
+    margin-bottom: 0rem; }
+  .c-info .tel02 .title {
+    float: left; }
+  .c-info .tel02 .tel_number {
+    float: right; }
+
+/* 768px以上 */
+/*Component_button
+※通常、接頭語にc- が必要だが、ここでは、前CSS構造の sub-common.css の内容を引き継ぐ。
+*/
+.navbar-nav li + li {
+  border-left: 1px solid #333; }
+
+.navbar-nav li a {
+  line-height: 2px;
+  color: #000; }
+
+/* 768px以上 */
 /*project_common
 */
 .p-top--note {
@@ -657,35 +799,6 @@ form.wpcf7-form p {
 .p-top--note p {
   font-size: 1.8rem;
   padding: 0 40px; }
-
-/*問い合わせボタン*/
-.p-btn-contact {
-  color: #fff;
-  border-radius: 4px;
-  display: block;
-  text-indent: -9999em;
-  transition: background 0.2s ease 0s;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  cursor: pointer; }
-
-/*マウスオーバーで光る*/
-.p-btn-contact:hover {
-  opacity: 0.7;
-  filter: alpha(opacity=70);
-  -ms-filter: “alpha(opacity=70) ”; }
-
-.p-btn-contact--header {
-  background: #f6692a url("/wp-content/uploads/icon/icon-mail-small.png") no-repeat scroll 5px 8px;
-  height: 40px;
-  width: 170px; }
-
-.p-btn-contact--middle {
-  background: #f6692a url("/wp-content/uploads/icon/icon-mail-middle.png") no-repeat scroll 20px 20px;
-  background-size: 200px;
-  height: 80px;
-  width: 250px; }
 
 .p-note--body {
   padding: 0 10px; }
@@ -705,14 +818,6 @@ form.wpcf7-form p {
 .p-posttitle--home {
   font-size: 1.8rem; }
 
-/*
-.p-post {
-  display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-}
-*/
 .p-post {
   width: 190px;
   margin: 0px 5px 0px 5px; }

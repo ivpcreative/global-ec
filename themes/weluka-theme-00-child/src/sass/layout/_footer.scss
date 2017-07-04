@@ -2,3 +2,29 @@
 Layout_footer
 welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr- 、とします。
 */
+.ls-ec--footer{
+  font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ","Meiryo",sans-serif;
+  font-size: 1.4rem;
+}
+
+.lr-ec-copylight{
+    font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ","Meiryo",sans-serif;
+    color: #fff;
+    font-size: 1.0rem;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #777777;
+}
+
+.lc-info-footer{
+  text-align: center;
+}
+/* 768px以上 */
+@media (min-width: 768px) {
+}
+/* 992px以上 */
+@media (min-width: 992px) {
+}
+/* 1200x以上 */
+@media (min-width: 1200px) {
+}

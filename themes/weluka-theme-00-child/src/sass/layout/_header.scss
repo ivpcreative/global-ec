@@ -8,6 +8,14 @@ welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr-
     display: none;
 }
 
+.lc-nav--header{
+  margin-top: 20px;
+}
+
+.lc-btn--header{
+  margin-top: 10px;
+}
+
 /* 768px以上(スマホ以外表示)*/
 @media (min-width: 768px) {
     /*header 固定時*/

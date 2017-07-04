@@ -1,0 +1,47 @@
+/*Component_button
+※通常、接頭語にc- が必要だが、ここでは、前CSS構造の sub-common.css の内容を引き継ぐ。
+*/
+
+.c-info{
+  .hours ,.tel01{
+    border-bottom: 1px solid #ccc;
+   padding-bottom: 0.3571rem;
+
+  }
+  .hours{
+    padding-left: 1.3571rem;
+  }
+  .tel01{
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    p{
+        margin-bottom: 0rem;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      span{
+        font-size: 1.7rem;
+        padding-left: 1.3rem
+        }
+    }
+    .tel02{
+      font-size: 12px;
+      line-height: 1.5;
+      p{
+          margin-bottom: 0rem;
+        }
+      .title{
+      float: left;
+      }
+      .tel_number{
+        float: right;
+        }
+      }
+}
+.c-info-footer{}
+
+
+/* 768px以上 */
+@media (min-width: 768px) {
+
+}

@@ -1,0 +1,18 @@
+/*Component_button
+※通常、接頭語にc- が必要だが、ここでは、前CSS構造の sub-common.css の内容を引き継ぐ。
+*/
+
+.navbar-nav{
+  li+ li{
+  border-left: 1px solid #333;
+    }
+  li a{
+      line-height: 2px;
+      color: #000;
+  }
+}
+
+/* 768px以上 */
+@media (min-width: 768px) {
+
+}

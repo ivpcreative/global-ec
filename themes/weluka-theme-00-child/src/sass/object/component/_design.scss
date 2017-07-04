@@ -64,15 +64,28 @@ margin-right: auto;
 
 
  .c-raytxt--strong{
-   position: absolute;
- //  background-color: #3bada8;
- bottom: 20px;
- left: 0px;
+  /* position: absolute;*/
+  background-color: #3bada8;
+  margin: 0 0 5px 0;
+padding-top: 20px;
  width:100%;
+ color: #ffff00;
+ height: 60px;
+   p{
+     font-size: 1.8rem;
+      line-height: 1.5rem;
+   }
  }
- .c-raytxt--strong p{
- line-height: 5px;
+
+ .c-raytxt--strong-04,.c-raytxt--strong-05{
+   padding-top: 10px;
+   font-size: 1.6rem;
  }
+
+
+.c-box3{
+   text-align: center;
+}
 
  .c-box3--lineup{
    color: #fff;
@@ -83,19 +96,38 @@ margin-right: auto;
    padding: 15px 10px;
    line-height: 1.0;
    p{
+     font-size: 2.8rem;
      line-height: 1.0;
    }
  }
 
+ .c-box3--inquiry{
+   margin:0 30px;
+   border:4px solid #1c829b;
+   padding: 15px 10px;
+   p{
+      font-family:"Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;";
+     font-size: 1.6rem;
+     line-height: 1.0;
+   }
+ }
+
+ .c-border{
+        background-color: #e7ebeb;
+       height: 6px;
+       margin: 1.9285em auto 1.6428em;
+       width: 24%;
+ }
 
 
  .c-name {
    border-bottom: 1px solid #656566;
    margin:30px 0 20px 0;
       h2{
-      font-family:Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+      font-family:$re-hirakaku;
       font-size: 3.0rem;
       margin: 5px;
+      font-weight: 700;
         }
       h2:before{
         margin:0 5px 0 0;
@@ -126,16 +158,9 @@ margin-right: auto;
 }
 
 
-.lc-buy .weluka-img{
-  height: 550px;
-  padding: 20px;
-  margin: 0px;
-    background-color: $buy-bg;
-}
-
 .c-detail{
+  text-align: center;
   height: 300px;
-  background-color: #fff;
   padding: 20px;
   margin: 0px;
   font-size: 1.6rem;
@@ -144,35 +169,66 @@ margin-right: auto;
   }
 }
 
-.lc-detail .weluka-img{
-    height: 250px;
-  margin: 0px;
-  padding: 10px;
-  background-color: #fff;
-
+.c-detail--trial, .c-detail--original{
+    background-color: $white-bg;
+}
+.c-detail--package,.c-detail_img-package{
+    background-color: $glay-bg;
 }
 
 .c-note{
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   width: 80%;
 }
 
 .c-note li {
     counter-increment: number;
     list-style: outside none none;
-    padding: 10px 0 10px 20px;
-    text-indent: -3rem;
+    padding: 10px 0 10px 30px;
+    text-indent: -2rem;
 }
 
 
 /* 768px以上 */
 @media (min-width: 768px) {
-
     .c-ttl {
         width: 70%
     }
     .navbar-brand {
         display: none;
     }
+    .c-raytxt--strong{
+      p{
+        font-size: 1.4rem;
+
+      }
+    }
+
+
+
+}
+
+/* 992px以上 */
+@media (min-width: 992px) {
+  .c-detail{
+    text-align: left;
+  }
+  .c-raytxt--strong{
+    p{
+      font-size: 1.6rem;
+
+    }
+  }
+}
+
+/* 1200x以上 */
+@media (min-width: 1200px) {
+  .c-raytxt--strong{
+    p{
+      font-size: 2.0rem;
+
+    }
+  }
 }
