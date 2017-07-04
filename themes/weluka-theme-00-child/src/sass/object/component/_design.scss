@@ -199,14 +199,16 @@ padding-top: 20px;
     .navbar-brand {
         display: none;
     }
-    .c-raytxt--strong{
-      p{
+    .c-raytxt--strong p{
         font-size: 1.4rem;
-
-      }
     }
 
-
+    .c-box3--lineup{
+       margin:0 10px;
+      p{
+        font-size: 2.0rem;
+      }
+    }
 
 }
 
@@ -215,20 +217,20 @@ padding-top: 20px;
   .c-detail{
     text-align: left;
   }
-  .c-raytxt--strong{
-    p{
+  .c-raytxt--strong p{
       font-size: 1.6rem;
-
-    }
   }
-}
 
+  .c-box3--lineup{
+     margin:0 10px;
+   }
+}
 /* 1200x以上 */
 @media (min-width: 1200px) {
-  .c-raytxt--strong{
-    p{
+  .c-raytxt--strong p{
       font-size: 2.0rem;
-
-    }
   }
+  .c-box3--lineup{
+     margin:0 15px;
+}
 }

@@ -156,9 +156,6 @@ welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr-
   vertical-align: middle;
   background-color: #777777; }
 
-.lc-info-footer {
-  text-align: center; }
-
 /* 768px以上 */
 /* 992px以上 */
 /* 1200x以上 */
@@ -240,7 +237,8 @@ column
   text-align: center; }
 
 .lc-box3--lineup {
-  position: relative; }
+  position: relative;
+  margin-bottom: 40px; }
 
 .lc-buy, .lc-detail {
   padding: 20px; }
@@ -430,11 +428,12 @@ welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr-
     -webkit-transition: all .3s;
     transition: all .3s; }
 
-.c-btnlink--header {
+/*boostraのnavへの設定に消されるため階層を深く設定*/
+.c-btn a.c-btnlink--header {
   background-color: #72b9cc;
   border-radius: 10px;
   padding: 10px 30px; }
-  .c-btnlink--header:hover {
+  .c-btn a.c-btnlink--header:hover {
     background-color: #59b1eb;
     color: #ff0; }
 
@@ -465,6 +464,9 @@ p.c-contact-ttl {
 /* end:問い合わせボタン*/
 /* 768px以上 */
 @media (min-width: 768px) {
+  .c-btn a.c-btnlink--header {
+    font-size: 1.4rem;
+    padding: 10px 10px; }
   .c-fixlink--tw {
     bottom: 150px; }
   .c-fixlink--fb {
@@ -477,6 +479,15 @@ p.c-contact-ttl {
     height: 53px; }
   .share-btns {
     padding: 0 50px; } }
+
+@media (min-width: 929px) {
+  .c-btn a.c-btnlink--header {
+    padding: 10px 15px; } }
+
+@media (min-width: 1200px) {
+  .c-btn a.c-btnlink--header {
+    font-size: 1.6rem;
+    padding: 10px 30px; } }
 
 /*Component_contact_form7
 ※通常、接頭語にc- が必要だが、ここでは、前CSS構造の sub-common.css の内容を引き継ぐ。
@@ -693,19 +704,27 @@ form.wpcf7-form p {
   .navbar-brand {
     display: none; }
   .c-raytxt--strong p {
-    font-size: 1.4rem; } }
+    font-size: 1.4rem; }
+  .c-box3--lineup {
+    margin: 0 10px; }
+    .c-box3--lineup p {
+      font-size: 2.0rem; } }
 
 /* 992px以上 */
 @media (min-width: 992px) {
   .c-detail {
     text-align: left; }
   .c-raytxt--strong p {
-    font-size: 1.6rem; } }
+    font-size: 1.6rem; }
+  .c-box3--lineup {
+    margin: 0 10px; } }
 
 /* 1200x以上 */
 @media (min-width: 1200px) {
   .c-raytxt--strong p {
-    font-size: 2.0rem; } }
+    font-size: 2.0rem; }
+  .c-box3--lineup {
+    margin: 0 15px; } }
 
 /*Component_button
 ※通常、接頭語にc- が必要だが、ここでは、前CSS構造の sub-common.css の内容を引き継ぐ。

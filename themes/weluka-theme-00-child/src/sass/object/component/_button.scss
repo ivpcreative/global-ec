@@ -130,7 +130,8 @@ padding: 20px;
   }
 }
 
-.c-btnlink--header{
+/*boostraのnavへの設定に消されるため階層を深く設定*/
+.c-btn a.c-btnlink--header{
   background-color: $buy-bg;
   border-radius: 10px;
   padding: 10px 30px;
@@ -160,9 +161,6 @@ padding: 20px;
   }
 }
 
-
-
-
 p.c-contact-name {
   padding:20px 0 5px 0;
   margin: 0px;
@@ -174,10 +172,13 @@ p.c-contact-ttl{
 
 /* end:問い合わせボタン*/
 
-
-
 /* 768px以上 */
 @media (min-width: 768px) {
+  .c-btn a.c-btnlink--header{
+    font-size: 1.4rem;
+    padding: 10px 10px;
+  }
+
 .c-fixlink--tw {
     bottom: 150px;
 
@@ -196,5 +197,18 @@ p.c-contact-ttl{
 
   .share-btns {
   padding: 0 50px;
+  }
+}
+
+@media (min-width: 929px) {
+  .c-btn a.c-btnlink--header{
+    padding: 10px 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c-btn a.c-btnlink--header{
+    font-size: 1.6rem;
+    padding: 10px 30px;
   }
 }
