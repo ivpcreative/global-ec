@@ -7,6 +7,10 @@ welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr-
   font-size: 1.4rem;
 }
 
+.ls-ec-copylight{
+  margin: 0px;
+  padding: 0px;
+}
 .lr-ec-copylight{
     font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ","Meiryo",sans-serif;
     color: #fff;
@@ -14,6 +18,7 @@ welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr-
     text-align: center;
     vertical-align: middle;
     background-color: #777777;
+
 }
 
 .lc-info-footer{

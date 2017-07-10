@@ -1,236 +1,338 @@
 /*Component_design
 ※通常、接頭語にc- が必要
 */
-
 /* ハンバーガーメニュー調整 767以下(特殊モバイル用設定)*/
 @media (max-width: 767px) {
-    .header-menu-clm .weluka-wpmenu {
-        position: relative;
-    }
-    /*.header-menu-clm .navbar-header*/
-    .header-menu-clm .navbar-header {
-        position: relative;
-        z-index: 999;
-        width: 100%;
-        left: 0;
-        top: -90px;
-    }
-    .weluka-nav-bar-v {
-        /*display: none;
+  .header-menu-clm .weluka-wpmenu {
+    position: relative;
+  }
+  /*.header-menu-clm .navbar-header*/
+  .header-menu-clm .navbar-header {
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    left: 0;
+    top: -90px;
+  }
+
+  .weluka-nav-bar-v {
+    /*display: none;
         メニューの表示非表示の操作はwekukaに直接設定
         */
-        background-color: #252525;
-    }
-    .navbar-header {
-        background-image: url("/wp-content/uploads/nav/line-sp.png");
-        /*.lr-navbar の背景でも設定しているが、メニューオープン時に必要*/
-    }
-    .weluka-nav-bar-h,
-    .navbar-collapse {
-        background-color: #fff;
-    }
-}
+    background-color: #252525;
+  }
 
+  .navbar-header {
+    /*
+        background-image: url("/wp-content/uploads/nav/line-sp.png");
+*/
+    /*.lr-navbar の背景でも設定しているが、メニューオープン時に必要*/
+  }
+
+  .navbar-collapse,
+  .weluka-nav-bar-h {
+    background-color: #fff;
+  }
+}
 /*タイトル*/
 .c-ttl {
-font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
-font-size: 3.4rem;
-font-weight: 700;
-text-align:center;
-margin-left: auto;
-margin-right: auto;
+  h2 {
+    font-size: 2.0rem;
+  }
+  font-weight: 700;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*短い下線*/
+.c-ttl--lineup,
+.c-ttl--strong {
+  content: "";
+  position: relative;
+  display: inline-block; // padding-bottom: 30px;
 }
 
-/*短い下線*/
-.c-ttl--strong , .c-ttl--lineup{
- content: "";
- position: relative;
- display: inline-block;
-// padding-bottom: 30px;
- }
+.c-ttl--lineup::before,
+.c-ttl--strong::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 3px solid #f78154;
+  width: 40%;
+  width: -webkit-calc(100% - 550px);
+  width: calc(100% - 550px);
+  margin: 0 auto;
+}
 
-.c-ttl--strong::before,.c-ttl--lineup::before {
- content: "";
- position: absolute;
- left: 0;
- right: 0;
- bottom: 0;
- border-bottom: 3px solid #f78154;
- width : 40% ;
- width : -webkit-calc(100% - 550px) ;
- width : calc(100% - 550px) ;
- margin: 0 auto;
- }
-
-
- .c-raytxt--strong{
+.c-raytxt--strong {
   /* position: absolute;*/
   background-color: #3bada8;
-  margin: 0 0 5px 0;
-padding-top: 20px;
- width:100%;
- color: #ffff00;
- height: 60px;
-   p{
-     font-size: 1.8rem;
-      line-height: 1.5rem;
-   }
- }
+  margin: 0 0 5px;
+  padding-top: 20px;
+  width: 100%;
+  color: #ffff00;
+  height: 60px;
 
- .c-raytxt--strong-04,.c-raytxt--strong-05{
-   padding-top: 10px;
-   font-size: 1.6rem;
- }
-
-
-.c-box3{
-   text-align: center;
-}
-
- .c-box3--lineup{
-   color: #fff;
-   text-align: center;
-   margin:0 30px;
-   background-color: $main-color;
-   border-radius:10px;
-   padding: 15px 10px;
-   line-height: 1.0;
-   p{
-     font-size: 2.8rem;
-     line-height: 1.0;
-   }
- }
-
- .c-box3--inquiry{
-   margin:0 30px;
-   border:4px solid #1c829b;
-   padding: 15px 10px;
-   p{
-      font-family:"Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;";
-     font-size: 1.6rem;
-     line-height: 1.0;
-   }
- }
-
- .c-border{
-        background-color: #e7ebeb;
-       height: 6px;
-       margin: 1.9285em auto 1.6428em;
-       width: 24%;
- }
-
-
- .c-name {
-   border-bottom: 1px solid #656566;
-   margin:30px 0 20px 0;
-      h2{
-      font-family:$re-hirakaku;
-      font-size: 3.0rem;
-      margin: 5px;
-      font-weight: 700;
-        }
-      h2:before{
-        margin:0 5px 0 0;
-        content:" ";
-        display:inline-block;
-        content: url("/global-ec/wp-content/uploads/ico/ico-box.png");
-        background-size:contain;
-        vertical-align:middle;
-      }
-}
-.c-voice{
-  p{
-  font-size:4.8rem;
-  font-weight: 700;
-  line-height: 1.0;
+  p {
+    font-size: 1.8rem;
+    line-height: 1.5rem;
   }
 }
-.c-ask{
-  p{
-    font-size: 2.4rem;
-    margin: 0px;
-  }
-    background-color: #fff;
-    border :3px solid $main-color;
-    width:80%;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-
-.c-detail{
-  text-align: center;
-  height: 300px;
-  padding: 20px;
-  margin: 0px;
+.c-raytxt--strong-04,
+.c-raytxt--strong-05 {
+  padding-top: 10px;
   font-size: 1.6rem;
-  h3{
-    font-size:2.0rem;
+}
+
+
+
+.c-mask--strong {
+	width:			100%;
+	height:			100%;
+	position:		absolute;	/* 絶対位置指定 */
+	top:			-12px;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(6,88,132,0.8);	/* マスクは半透明 */
+	-webkit-transition:	all 0.2s ease;
+	transition:		all 0.2s ease;
+    z-index: 99;
+}
+
+.c-mask--strong .caption {
+  padding: 30px 8px;
+	text-align: 		left;
+	color:			#fff;
+
+}
+
+
+
+.c-box3 {
+  text-align: center;
+}
+
+.c-box3--lineup {
+  color: #fff;
+  text-align: center;
+  margin: 0 30px;
+  background-color: $main-color;
+  border-radius: 10px;
+  padding: 15px 10px;
+  line-height: 1.0;
+
+  p {
+    font-size: 2.0rem;
+    line-height: 1.0;
   }
 }
 
-.c-detail--trial, .c-detail--original{
-    background-color: $white-bg;
-}
-.c-detail--package,.c-detail_img-package{
-    background-color: $glay-bg;
+.c-box3--inquiry {
+  margin: 0 10px;
+  padding: 15px 5px;
+  border: 4px solid #1c829b;
+
+  p {
+    font-family: "Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;";
+    font-size: 1.6rem;
+    line-height: 1.0;
+  }
 }
 
-.c-note{
+.c-border {
+  background-color: #e7ebeb;
+  height: 6px;
+  margin: 1.9285em auto 1.6428em;
+  width: 24%;
+}
+
+.c-name {
+  border-bottom: 1px solid #656566;
+  margin: 30px 0 20px;
+
+  h2 {
+    font-family: $re-hirakaku;
+    font-size: 3.0rem;
+    margin: 5px;
+    font-weight: 700;
+  }
+
+  h2:before {
+    margin: 0 5px 0 0;
+    content: " ";
+    display: inline-block;
+    content: url("/global-ec/wp-content/uploads/ico/ico-box.png");
+    background-size: contain;
+    vertical-align: middle;
+  }
+}
+
+.c-voice {
+  p {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.0;
+  }
+}
+
+.c-ask {
+  p {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  background-color: #fff;
+  border: 3px solid $main-color;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c-answer {
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.c-detail {
+  text-align: left;
+  padding: 30px;
+  margin: 0;
+  font-size: 1.6rem;
+
+  h3 {
+    text-align:center;
+    font-size: 2.0rem;
+  }
+}
+
+.c-detail--original,
+.c-detail--trial {
+  background-color: $white-bg;
+}
+
+.c-detail--package,
+.c-detail_img-package {
+  background-color: $glay-bg;
+}
+
+.c-detail li{
+counter-increment: number;
+    list-style: outside disc ;
+padding: 10px 0 10px 2px;
+text-indent: -0.2rem;
+}
+
+.c-note {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  width: 80%;
+  margin: 5px 0;
 }
 
 .c-note li {
-    counter-increment: number;
-    list-style: outside none none;
-    padding: 10px 0 10px 30px;
-    text-indent: -2rem;
+  counter-increment: number;
+  list-style: outside none none;
+  padding: 10px 0 10px 30px;
+  text-indent: -2rem;
 }
-
-
 /* 768px以上 */
 @media (min-width: 768px) {
-    .c-ttl {
-        width: 70%
-    }
-    .navbar-brand {
-        display: none;
-    }
-    .c-raytxt--strong p{
-        font-size: 1.4rem;
-    }
 
-    .c-box3--lineup{
-       margin:0 10px;
-      p{
-        font-size: 2.0rem;
-      }
+  .c-ttl {
+    h2 {
+      font-size: 3.4rem;
     }
+    width: 70%;
+  }
 
+  .c-voice {
+    p {
+      font-size: 4.8rem;
+    }
+  }
+
+  .c-ask {
+    width: 80%;
+
+    p {
+      font-size: 2.4rem;
+      margin: 0;
+    }
+  }
+
+  .c-answer {
+    font-size: 1.8rem;
+    text-align: center;
+
+  }
+
+  .c-note {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .navbar-brand {
+    display: none;
+  }
+
+  .c-raytxt--strong p {
+    font-size: 1.4rem;
+  }
+
+  .c-box3--lineup {
+    margin: 0 10px;
+  }
+
+  .c-box3--inquiry {
+    margin: 0;
+    padding: 15px 5px;
+    border: 4px solid #1c829b;
+
+    p {
+      font-size: 1.4rem;
+    }
+  }
 }
-
 /* 992px以上 */
 @media (min-width: 992px) {
-  .c-detail{
-    text-align: left;
+  .c-detail {
+    height: 350px;
   }
-  .c-raytxt--strong p{
-      font-size: 1.6rem;
+  .c-detail--package {
+    height: 250px;
+  }
+  .c-raytxt--strong p {
+    font-size: 1.6rem;
   }
 
-  .c-box3--lineup{
-     margin:0 10px;
-   }
+  .c-box3--lineup {
+    margin: 0 10px;
+
+    p {
+      font-size: 2.8rem;
+    }
+  }
+
+  .c-box3--inquiry {
+    margin: 0 5px;
+    padding: 15px 5px;
+    border: 4px solid #1c829b;
+
+    p {
+      font-size: 1.8rem;
+    }
+  }
 }
 /* 1200x以上 */
 @media (min-width: 1200px) {
-  .c-raytxt--strong p{
-      font-size: 2.0rem;
+  .c-raytxt--strong p {
+    font-size: 2.0rem;
   }
-  .c-box3--lineup{
-     margin:0 15px;
-}
+
+  .c-box3--lineup {
+    margin: 0 15px;
+  }
 }

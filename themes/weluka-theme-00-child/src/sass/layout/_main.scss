@@ -2,91 +2,89 @@
 Layout＿main
 welukaの3パーツの接頭語は、Section = ls- 、 column = lc- 、row = lr- 、とします。
 */
+/*Section*/
+.lc-key--top .weluka-img,
+.ls-ec--strong,
+.ls-ec--top {
+  padding: 0;
+}
 
+.lc-key--top .weluka-img {
+  margin: 0;
+}
 
-/*
-Section
-*/
-
-.ls-ec--top,.ls-ec--strong{
+.ls-ec--original,
+.ls-ec--strong,
+.ls-ec--trial {
   background-color: $glay-bg;
-  padding: 0px;
 }
-.ls-ec--trial,.ls-ec--original{
-  background-color:$glay-bg;
-}
+/*row*/
 
-/*
-row
-*/
-.lr-box{
-  padding:0 0 50px 0;
-text-align: center;
+.lr-box {
+  padding: 0 0 30px;
+  text-align: center;
 }
+/*column*/
 
-/*
-column
-*/
-.lc-box--strong{
+.lc-box--strong {
   background-color: $white-bg;
   padding-left: 5px;
   padding-right: 5px;
-  margin: 3px 5px 10px 5px;
-  //position: relative; //テキストを上に載せるため
+  margin: 3px 5px 10px;
+  position:		relative;	/* 相対位置指定 テキストを上に載せるため*/
 }
 
-
-.lc-box--strong .weluka-img{
+.lc-box--strong .weluka-img {
   height: 130px;
-  margin: 0px;
+  margin: 0;
+
 }
 
-.lc-box--strong-03 .c-box--strong{
-  margin-top:10px;
+.lc-box--strong-03 .c-box--strong {
+  margin-top: 10px;
 }
 
-.lc-ttl{
+.lc-box--strong:hover .c-mask--strong {
+	opacity:		1;	/* マスクを表示する */
+}
+
+
+.lc-ttl {
   text-align: center;
 }
 
-
-.lc-box3--lineup{
+.lc-box3--lineup {
   position: relative;
   margin-bottom: 40px;
-
 }
 
-
-.lc-buy,.lc-detail{
+.lc-buy,
+.lc-detail {
   padding: 20px;
 }
 
-.lc-buy .weluka-img{
-  height: 550px;
+.lc-buy .weluka-img {
   padding: 20px;
-  margin: 0px;
-    background-color: $buy-bg;
+  margin: 0;
+  background-color: $buy-bg;
 }
 
-.lc-detail .weluka-img{
-    height: 250px;
-  margin: 0px;
+.lc-detail .weluka-img {
+  margin: 0;
   padding: 10px;
 }
 
-.lc-detail--trial .weluka-img,.lc-detail--original .weluka-img{
+.lc-detail--original .weluka-img,
+.lc-detail--trial .weluka-img {
   background-color: $white-bg;
 }
 
-
-.lc-detail--package .weluka-img{
+.lc-detail--package .weluka-img {
   background-color: $glay-bg;
 }
-
 /* 768px以上(スマホ以外表示)*/
-
 @media (min-width: 768px) {
-  .lr-box--strong{
+  .lr-box--strong {
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: center;
@@ -95,37 +93,51 @@ column
     align-items: stretch;
     text-align: center;
   }
-    #main-content {
-        padding: 0.5rem 0rem;
-    }
-    #weluka-main-header {
-        padding: 1rem 0.5rem 0.5rem 0.5rem;
-    }
-    .lr-main,
-    .ls-note,
-    .lc-sub {
-        padding: 0.5rem 5rem;
-    }
-    /* transition */
-    .weluka-custom-header,
-    .weluka-custom-header:after
-    {
-        transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-    }
+
+  #main-content {
+    padding: 0.5rem 0;
+  }
+
+  #weluka-main-header {
+    padding: 1rem 0.5rem 0.5rem;
+  }
+
+  .lc-sub,
+  .lr-main,
+  .ls-note {
+    padding: 0.5rem 5rem;
+  }
+  /* transition */
+  .weluka-custom-header,
+  .weluka-custom-header:after {
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
 }
 /*992px以上*/
 @media (min-width: 992px) {
-    .lr-main,
-    .ls-note,
-    .lc-sub {
-        padding: 1rem 20rem;
-    }
-    .single-post .weluka-container-fluid,
-    .archive .weluka-container-fluid {
-        max-width: 100%;
-        width: 1170px;
-    }
+  .lc-buy .weluka-img {
+    height: 600px;
+  }
+  .lc-buy--package .weluka-img {
+    height: 500px;
+  }
+
+  .lc-detail .weluka-img {
+    height: 250px;
+  }
+
+  .lc-sub,
+  .lr-main,
+  .ls-note {
+    padding: 1rem 20rem;
+  }
+
+  .archive .weluka-container-fluid,
+  .single-post .weluka-container-fluid {
+    max-width: 100%;
+    width: 1170px;
+  }
 }

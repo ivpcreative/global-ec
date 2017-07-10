@@ -6,8 +6,14 @@ $glay-bg:#edf0f2;
 $white-bg:#fff;
 $buy-bg:#72b9cc;
 $btn-color:#72b9cc;
-$re-hirakaku:"Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;";
 
+
+//フォントサイズ
+$fs-main-pc:1.6rem;
+$fs-main-sp:1.8rem;
+
+//フォント
+$re-hirakaku: Meiryo, "メイリオ",Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Verdana, "ＭＳ Ｐゴシック", sans-serif;
 @font-face {
    font-family: 'Noto Sans JP';
    font-style: normal;
@@ -30,7 +36,7 @@ body {
     font-feature-settings: 'palt' 1;
     color: #000000;
     background-color: #fff;
-    font-size: 1.6rem; /*スマホ用 PCはメディアクエリに記載*/
+    font-size: $fs-main-sp; /*スマホ用(PCはメディアクエリに記載)*/
 }
 
 .h1,
@@ -151,7 +157,7 @@ a:hover {
 /* 768px以上 */
 @media (min-width: 768px) {
     body {
-        font-size: 1.8rem;
+        font-size:$fs-main-pc;
     }
 
 

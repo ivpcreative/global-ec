@@ -1,32 +1,40 @@
 /*Component_button
 ※通常、接頭語にc- が必要だが、ここでは、前CSS構造の sub-common.css の内容を引き継ぐ。
 */
-.c-arrow--lineup{
-  text-align: center;;
+.c-arrow--lineup {
+  text-align: center;
 }
-
 /*丸で囲んだ矢印*/
-.c-arrow_inner--lineup{
-  font-size: 30px; /*矢印の大きさ*/
+.c-arrow_inner--lineup {
+  background-color: #fff;
+  font-size: 30px;
+  /*矢印の大きさ*/
   bottom: -23px;
- left: 43%;
- position: absolute;
-width: 50px;
-   height: 50px;
-   -webkit-border-radius: 50%;/* 50%でもOK */
-   -moz-border-radius: 50%;
-   border-radius: 50%;
-   border-color: #3b7aad;
-   background-color: #fff;/* 円の色 */
-   padding: 11px 0 0 0px;
-   box-shadow: 0 0 0 3px $main-color; /*外周の色*/
-}
+  left: 43%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 50%;
+  /* 50%でもOK */
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border-color: #3b7aad;
+  /* 円の色 */
+  padding: 11px 0 0;
+  box-shadow: 0 0 0 3px $main-color;
+  /*外周の色*/
+  text-decoration: none;
 
-.c-arrow_inner::before{
-  color: $main-color;
-}
+  &:before {
+    color: $main-color;
+  }
 
-.c-sankaku{
+  &:hover {
+    background-color: #ff0;
+  }
+}
+/* end.ボタン効果*/
+.c-sankaku {
   border-style: solid;
   border-width: 30px 70px 0 70px;
   border-color: $main-color transparent transparent transparent;
@@ -36,10 +44,5 @@ width: 50px;
   margin-left: auto;
   margin-right: auto;
 }
-
-
-
 /* 768px以上 */
-@media (min-width: 768px) {
-
-}
+@media (min-width: 768px) {}

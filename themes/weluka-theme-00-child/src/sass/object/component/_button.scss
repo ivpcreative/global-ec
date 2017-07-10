@@ -1,123 +1,141 @@
 /*Component_button
 ※通常、接頭語にc- が必要だが、ここでは、前CSS構造の sub-common.css の内容を引き継ぐ。
 */
-
 /*TOPに戻るボタン*/
+
 .c-fixlink {
-    position: fixed;
-        right: 10px;
+  position: fixed;
+  right: 10px;
 }
+
 .c-fixlink--tw {
-    bottom: 90px;
+  bottom: 90px;
 }
+
 .c-fixlink--fb {
-    bottom: 50px;
+  bottom: 50px;
 }
+
 .c-fixlink--top {
-    bottom: 10px;
+  bottom: 10px;
 }
+
 .c-fixlink a {
-    display: block;
-    z-index: 9999;
-    padding: 5px 0 0 1px;
-    border-radius: 3px;
-    width: 35px;
-    height: 35px;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
+  display: block;
+  z-index: 9999;
+  padding: 3px 0 0 1px;
+  width: 35px;
+  height: 35px;
+  color: $main-color;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  -webkit-border-radius: 50%;
+  /* 50%でもOK */
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #3b7aad;
+  /*外周の色*/
 }
-.c-fixlink--tw a{
-    background-color: #1dcaff;
+
+.c-fixlink--tw a {
+  background-color: #1dcaff;
 }
-.c-fixlink--fb a{
-    background-color: #3b5998;
+
+.c-fixlink--fb a {
+  background-color: #3b5998;
 }
-.c-fixlink--top a{
-    background-color: #ff5a40;
+
+.c-fixlink--top a {
+  background-color: #fff;
+  font-size: 1.2rem;
+   padding: 6px 0 0 1px;
+  /* 円の色 */
 }
 
 .c-fixlink a:hover {
-    text-decoration: none;
-    opacity: 0.7;
+  text-decoration: none;
+  opacity: 0.7;
 }
 /* share button */
 
 .share-btns {
-    clear: both;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    padding: 0 10px;
-    text-align: center;
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding: 0 10px;
+  text-align: center;
 }
 
 .share-btns ul {
-    margin: 0;
-    display: block;
-    list-style-type: disc;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 0px !important;
+  margin: 0;
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0 !important;
 }
 
 .share-btns-item {
-    float: left;
-    list-style: outside none none;
-    margin: 0px 10px;
-    width: 40%;
+  float: left;
+  list-style: outside none none;
+  margin: 0 10px;
+  width: 40%;
 }
 
 .share-btns-item .fa {
-    width: 16px;
+  width: 16px;
 }
 
 .share-btn {
-    color: #fff !important;
-    display: block;
-    font-size: 14px;
-    padding: 20px 0;
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
+  color: #fff !important;
+  display: block;
+  font-size: 14px;
+  padding: 20px 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
 }
 
 .share-btn.fb {
-    background: #295993 none repeat scroll 0 0;
+  background: #295993 none repeat scroll 0 0;
 }
 
 .share-btn.twitter {
-    background: #00acec none repeat scroll 0 0;
+  background: #00acec none repeat scroll 0 0;
 }
 
 .share-btn.hatena {
-    background: #008fde none repeat scroll 0 0;
+  background: #008fde none repeat scroll 0 0;
 }
 
 .share-btn.gplus {
-    background: #de4d3e none repeat scroll 0 0;
+  background: #de4d3e none repeat scroll 0 0;
 }
-
 /* end.share button */
-
 /* 問い合わせボタン*/
-.c-btn--contact{
-text-align: center;
-padding: 20px;
+
+.c-btn--contact {
+  text-align: center;
+  padding: 20px;
 }
+
 .c-btnlink {
   color: #fff;
   display: inline-block;
   text-align: center;
   text-decoration: none;
   outline: none;
-  box-shadow:2px 2px 2px #555;
-  p{
+  box-shadow: 2px 2px 2px #555;
+
+  p {
     line-height: 1.0;
   }
-  &::before,&::after{
+
+  &::after,
+  &::before {
     position: absolute;
     z-index: -1;
     display: block;
@@ -125,89 +143,109 @@ padding: 20px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-transition: all .3s;
-    transition: all .3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
 }
-
 /*boostraのnavへの設定に消されるため階層を深く設定*/
-.c-btn a.c-btnlink--header{
+.c-btn a.c-btnlink--header {
   background-color: $buy-bg;
   border-radius: 10px;
   padding: 10px 30px;
-  &:hover{
+
+  &:hover {
     background-color: #59b1eb;
     color: #ff0;
   }
 }
 
-.c-btnlink--contact{
+.c-btnlink--contact {
   background-color: $buy-bg;
-  width: 490px;
+  width: 280px;
   height: 90px;
   line-height: 54px;
-  &:hover{
+
+  &:hover {
     background-color: #59b1eb;
     color: #ff0;
   }
 }
 
-.c-btnlink--inquiry{
-  background-color:#fda722;
+.c-btnlink--inquiry {
+  background-color: #fda722;
   padding: 10px 80px;
-  &:hover{
+
+  &:hover {
     background-color: #fdc522;
     color: #ff0;
   }
 }
 
 p.c-contact-name {
-  padding:20px 0 5px 0;
-  margin: 0px;
+  padding: 20px 0 5px;
+  margin: 0;
   font-size: 1.4rem;
 }
-p.c-contact-ttl{
-  font-size: 2.8rem;
+
+p.c-contact-ttl {
+  font-size: 2.2rem;
 }
-
 /* end:問い合わせボタン*/
-
 /* 768px以上 */
 @media (min-width: 768px) {
-  .c-btn a.c-btnlink--header{
+  .c-btn a.c-btnlink--header {
     font-size: 1.4rem;
-    padding: 10px 10px;
+    padding: 10px;
   }
 
-.c-fixlink--tw {
-    bottom: 150px;
+  .c-btnlink--inquiry {
+    padding: 10px 40px;
+  }
 
-}
-.c-fixlink--fb {
+  .c-btnlink--contact {
+    width: 490px;
+  }
+
+  p.c-contact-name {
+    padding: 20px 0 5px;
+  }
+
+  p.c-contact-ttl {
+    font-size: 2.8rem;
+  }
+
+
+    .c-fixlink a {
+      padding: 10px 0 0 1px;
+      width: 53px;
+      height: 53px;
+    }
+
+  .c-fixlink--tw {
+    bottom: 150px;
+  }
+
+  .c-fixlink--fb {
     bottom: 90px;
-}
-.c-fixlink--top {
+  }
+
+  .c-fixlink--top a{
+    font-size: 1.8rem;
     bottom: 30px;
-}
-.c-fixlink a {
-    padding: 12px 0 0 1px;
-    width: 53px;
-    height: 53px;
-}
+  }
+
 
   .share-btns {
-  padding: 0 50px;
+    padding: 0 50px;
   }
 }
-
 @media (min-width: 929px) {
-  .c-btn a.c-btnlink--header{
+  .c-btn a.c-btnlink--header {
     padding: 10px 15px;
   }
 }
-
 @media (min-width: 1200px) {
-  .c-btn a.c-btnlink--header{
+  .c-btn a.c-btnlink--header {
     font-size: 1.6rem;
     padding: 10px 30px;
   }
